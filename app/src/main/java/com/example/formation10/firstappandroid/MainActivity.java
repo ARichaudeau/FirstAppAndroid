@@ -1,5 +1,7 @@
 package com.example.formation10.firstappandroid;
 
+import android.content.Intent;
+import android.os.PersistableBundle;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
@@ -13,6 +15,8 @@ public class MainActivity extends AppCompatActivity {
     private String operateur;
     private double chiffre1;
     private double resultat;
+    private final String RESULT_KEY = "resultat,textViewScreen";
+    private double resultat2;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -22,6 +26,16 @@ public class MainActivity extends AppCompatActivity {
         textViewScreen = findViewById(R.id.textView_screen);
 
         Log.d("formation", "Création de MainActivity");
+
+        if (savedInstanceState != null){
+            textViewScreen.setText(savedInstanceState.getString(RESULT_KEY));
+        }
+    }
+
+    @Override
+    public void onSaveInstanceState(Bundle outState) {
+        super.onSaveInstanceState(outState);
+        outState.putString(RESULT_KEY,textViewScreen.getText().toString());
     }
 
     /**
@@ -59,6 +73,7 @@ public class MainActivity extends AppCompatActivity {
         switch (operateur) {
             case "+" :
                 resultat = chiffre1 + Double.parseDouble(textViewScreen.getText().toString());
+    //          resultat2 = resultat + Double.parseDouble(textViewScreen.getText().toString());
                 break;
             case "-" :
                 resultat = chiffre1 - Double.parseDouble(textViewScreen.getText().toString());
@@ -70,6 +85,7 @@ public class MainActivity extends AppCompatActivity {
                 resultat = chiffre1 / Double.parseDouble(textViewScreen.getText().toString());
                 break;
                 }
+
          textViewScreen.setText(String.valueOf(resultat));
          }
 
@@ -80,4 +96,11 @@ public class MainActivity extends AppCompatActivity {
      public void onDigitDeleteClicked(View v){
          textViewScreen.setText("0");
      }
+
+    public void onInfoClicked(View v) {
+    Intent intent = new Intent(this,InfoActivity.class);
+    this.startActivity(intent);
+
+    }
+
 }

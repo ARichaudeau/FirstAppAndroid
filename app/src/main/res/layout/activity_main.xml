@@ -18,7 +18,7 @@
 
     <GridLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="wrap_content"
         android:columnCount="4"
         android:rowCount="4">
 
@@ -167,6 +167,14 @@
          android:layout_columnWeight="1"
          android:onClick="onDigitOpClicked"/>
 
+
     </GridLayout>
+
+    <Button
+        android:id="@+id/button_digit_info"
+        android:text="Info"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:onClick="onInfoClicked"/>
 
 </LinearLayout>

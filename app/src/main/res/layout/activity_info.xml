@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".InfoActivity">
+
+    <TextView
+        android:id="@+id/textView_screen_firstName"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Amandine"
+        android:layout_margin="10dp"
+        android:textSize="25sp"
+        android:textAlignment="viewEnd" />
+
+    <TextView
+        android:id="@+id/textView_screen_name"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Richaudeau"
+        android:layout_margin="10dp"
+        android:textSize="25sp"
+        android:textAlignment="viewEnd" />
+
+    <Button
+        android:id="@+id/button_finish"
+        android:text="Finish"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:onClick="onFinishClicked"
+        />
+
+    <Button
+        android:id="@+id/button_call"
+        android:text="Call"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:onClick="onCallClicked"
+        />
+
+    <Button
+        android:id="@+id/button_mail"
+        android:text="Mail"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:onClick="onSendMailClicked"
+        />
+
+    <Button
+        android:id="@+id/button_sms"
+        android:text="Sms"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:onClick="onSmsClicked"
+        />
+</LinearLayout>
